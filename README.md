@@ -41,4 +41,4 @@ license details in each individual README.
 ## Contact
 
 Aman Bhargava - [thedivtagguy](https://twitter.com/thedivtagguy) -
-amanbhargava2001\[@\]gmail
+amanbhargava2001\[@\]gmail.com
