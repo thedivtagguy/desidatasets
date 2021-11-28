@@ -1,9 +1,15 @@
 
-# uttarakhand
+# Uttarakhand datasets
 ## Description
-This category contains datasets related to uttarakhand.
+This category contains datasets related to Uttarakhand.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = uttarakhand)
+library(desidata)
+get_datasets(within = states, about = uttarakhand)
 ```
+`desidata for R`

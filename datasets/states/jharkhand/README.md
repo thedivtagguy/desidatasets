@@ -1,9 +1,15 @@
 
-# jharkhand
+# Jharkhand datasets
 ## Description
-This category contains datasets related to jharkhand.
+This category contains datasets related to Jharkhand.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = jharkhand)
+library(desidata)
+get_datasets(within = states, about = jharkhand)
 ```
+`desidata for R`

@@ -1,9 +1,15 @@
 
-# maharashtra
+# Maharashtra datasets
 ## Description
-This category contains datasets related to maharashtra.
+This category contains datasets related to Maharashtra.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = maharashtra)
+library(desidata)
+get_datasets(within = states, about = maharashtra)
 ```
+`desidata for R`

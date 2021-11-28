@@ -1,9 +1,15 @@
 
-# dadra_and_nagar_haveli
+# Dadra_and_nagar_haveli datasets
 ## Description
-This category contains datasets related to dadra_and_nagar_haveli.
+This category contains datasets related to Dadra_and_nagar_haveli.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = dadra_and_nagar_haveli)
+library(desidata)
+get_datasets(within = states, about = dadra_and_nagar_haveli)
 ```
+`desidata for R`

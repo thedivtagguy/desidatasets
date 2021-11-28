@@ -1,9 +1,15 @@
 
-# health
+# Health datasets
 ## Description
-This category contains datasets related to health.
+This category contains datasets related to Health.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = categories, about = health)
+library(desidata)
+get_datasets(within = categories, about = health)
 ```
+`desidata for R`

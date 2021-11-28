@@ -1,9 +1,15 @@
 
-# madhya_pradesh
+# Madhya_pradesh datasets
 ## Description
-This category contains datasets related to madhya_pradesh.
+This category contains datasets related to Madhya_pradesh.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = madhya_pradesh)
+library(desidata)
+get_datasets(within = states, about = madhya_pradesh)
 ```
+`desidata for R`

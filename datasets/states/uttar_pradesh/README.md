@@ -1,9 +1,15 @@
 
-# uttar_pradesh
+# Uttar_pradesh datasets
 ## Description
-This category contains datasets related to uttar_pradesh.
+This category contains datasets related to Uttar_pradesh.
 ## Usage
+Install the `desidata` package using CRAN:
+```r
+install.packages("desidata")
+```
 Access datasets in this category by using the following command:
 ```r
-get_datasets_in(within = states, about = uttar_pradesh)
+library(desidata)
+get_datasets(within = states, about = uttar_pradesh)
 ```
+`desidata for R`
