@@ -1,19 +1,48 @@
 import os
+from slugify import slugify
 
-# Get where the file is saved
+# Get current path
+current_path = os.getcwd()
 
 # Switch to /datasets
 os.chdir("./datasets")
 
 
+# List out possible licenses
+licenses = [
+    "CC0",
+    "CC BY",
+    "CC BY-SA",
+    "CC BY-ND",
+    "CC BY-NC",
+    "CC BY-NC-SA",
+    "CC BY-NC-ND",
+]
+
+
+category_list = [
+    "categories",
+    "cities",
+    "states"
+]
+
+
+# Function to find names of folders in a directory
+def get_folders(path):
+    folders = []
+    for folder in os.listdir(path):
+        if os.path.isdir(os.path.join(path, folder)):
+            folders.append(folder)
+    return folders
+
+
+
+
 README_TEMPLATE = """
 # {dataset_name}
+#### {category} > {subcategory}
 
 {data_description}
-
-## Data Dictionary 
-
-{markdown_table_from_dataset_columns}
 
 ## Download
 
@@ -23,6 +52,10 @@ library(desidata)
 download_data(name = "{dataset_id}")
 ```
 
+## Data Dictionary 
+
+{markdown_table_from_dataset_columns}
+
 # Source
 This dataset is sourced from {dataset_source}
 
@@ -31,6 +64,7 @@ This dataset is sourced from {dataset_source}
 
 ## Cite This Dataset
 {dataset_citation}
+
 
 `desidata for R`
 
@@ -79,26 +113,36 @@ def get_dataset_info():
 
     while True:
         dataset_license = input("License: ")
-        if dataset_license == "":
+        if dataset_license not in licenses:
             print("Please enter a valid license")
         else:
             break
 
     while True:
-        dataset_category = input("Category: ")
-        if dataset_license == "":
+        # Show list of categories and ask user to choose based on index
+        print("\nChoose a category")
+        for i, category in enumerate(category_list):
+            print(f"{i}: {category}")
+        category_index = input("Category: ")
+        if category_index == "":
             print("Please enter a valid category")
         else:
             break
+
 
     while True:
-        dataset_about = input("About: ")
-        if dataset_license == "":
-            print("Please enter a valid category")
+       # Show list of subcategories and ask user to choose based on index
+        print("\nChoose a subcategory")
+        # Go to the category folder and get list of subcategories
+        subcategories = get_folders(os.path.join(current_path, category_list[int(category_index)]))
+        for i, subcategory in enumerate(subcategories):
+            print(f"{i}: {subcategory}")
+        subcategory_index = input("Subcategory: ")
+        if subcategory_index == "":
+            print("Please enter a valid subcategory")
         else:
             break
-
-
+        
 
     dataset_columns = []
     while True:
@@ -110,14 +154,13 @@ def get_dataset_info():
             break
     
     # Create citation for dataset
-    dataset_citation = "{dataset_source_name} ({dataset_date}). {dataset_name}. {dataset_category}. Retrieved from {dataset_source}".format(
+    dataset_citation = "{dataset_source_name} ({dataset_date}). {dataset_name}. {dataset_category}. Retrieved from {dataset_source} \n".format(
         dataset_source_name=dataset_source_name,
         dataset_date=dataset_date,
         dataset_name=dataset_name,
         dataset_category=dataset_category,
         dataset_source=dataset_source
     )
-    
     
 
     # Create a markdown table from the dataset columns
@@ -127,17 +170,17 @@ def get_dataset_info():
             column[0] + " | " + column[1] + " | " + column[2] + " |\n"
     
     # Create ID for dataset
-
     dataset_id = "dd" + "_" + dataset_name + "_" + dataset_date
+    dataset_id = slugify(dataset_id)
+
     # Change into the dataset folder
     os.chdir(dataset_category + "/" + dataset_about)
-
     # Create dataset folder
     os.mkdir(dataset_id)
     os.chdir(dataset_id)
 
     # Create a YAML file with the dataset information
-    with open("DESCRIPTION.desidata", "w") as f:
+    with open("DESCRIPTION.yaml", "w") as f:
         f.write("--- \n")
         f.write("id: " + dataset_id + "\n")
         f.write("name: " + dataset_name + "\n")
@@ -163,7 +206,12 @@ def get_dataset_info():
                                        dataset_id=dataset_id,
                                        dataset_citation=dataset_citation,
                                        dataset_source=dataset_source_name,
-                                       dataset_license=dataset_license))
+                                       dataset_license=dataset_license,
+                                       category = dataset_category,
+                                       subcategory = dataset_about))
+        
+        # Switch back to current_path
+        # os.chdir(current_path)
 
 
 get_dataset_info()
