@@ -64,7 +64,7 @@ def create_dataset(current_path):
         print("\nChoose a subcategory")
         # Go to the category folder and get list of subcategories
         subcategories = get_folders(os.path.join(
-            current_path, category_list[int(category_index)]))
+            current_path, 'datasets', category_list[int(category_index)]))
         for i, subcategory in enumerate(subcategories):
             print(f"{i}: {subcategory}")
         subcategory_index = input("Subcategory: ")
@@ -141,8 +141,10 @@ def create_dataset(current_path):
                                        dataset_citation=dataset_citation,
                                        dataset_source=dataset_source_name,
                                        dataset_license=dataset_license,
-                                       category=dataset_category,
-                                       subcategory=dataset_about))
+                                       # Capitalize first letter of each word
+                                       category=dataset_category.title(),
+                                       subcategory=dataset_about.title()
+                                       ))
 
         # Switch back to current_path
         os.chdir(current_path)
@@ -150,7 +152,7 @@ def create_dataset(current_path):
 if __name__ == "__main__":
     import os
     from slugify import slugify
-
+    import inspect
     current_path = os.getcwd()
 
     # Switch to /datasets
@@ -183,9 +185,9 @@ if __name__ == "__main__":
         return folders
 
 
-    README_TEMPLATE = """
+    README_TEMPLATE = inspect.cleandoc("""
     # {dataset_name}
-    #### {category} > {subcategory}
+    `{category} > {subcategory}`
 
     {data_description}
 
@@ -213,7 +215,7 @@ if __name__ == "__main__":
 
     `desidata for R`
 
-    """
+    """)
 
     # Function to take in user input about the dataset
     # Get current path
