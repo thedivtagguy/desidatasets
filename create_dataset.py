@@ -83,6 +83,10 @@ def create_dataset(current_path):
         if input("Add another column? (y/n) ") == "n":
             break
 
+    # Create ID for dataset
+    dataset_id = "dd" + "_" + dataset_name + "_" + dataset_date
+    dataset_id = slugify(dataset_id)
+
     # Create citation for dataset
     dataset_citation = "{dataset_source_name} ({dataset_date}). '{dataset_name}', {dataset_url}. Retrieved from {dataset_source} \n".format(
         dataset_source_name=dataset_source_name,
@@ -93,7 +97,7 @@ def create_dataset(current_path):
         dataset_url=base_url.format(
             category=dataset_category,
             subcategory=dataset_about,
-            url=slugify(dataset_name)
+            url=slugify(dataset_id)
         )
     )
 
@@ -103,9 +107,7 @@ def create_dataset(current_path):
         markdown_table_from_dataset_columns += "| " + \
             column[0] + " | " + column[1] + " | " + column[2] + " |\n"
 
-    # Create ID for dataset
-    dataset_id = "dd" + "_" + dataset_name + "_" + dataset_date
-    dataset_id = slugify(dataset_id)
+
 
     # Change into the dataset folder
     os.chdir(dataset_category + "/" + dataset_about)
@@ -167,7 +169,6 @@ if __name__ == "__main__":
         "CC BY-NC-SA",
         "CC BY-NC-ND",
     ]
-
 
     category_list = [
         "categories",
