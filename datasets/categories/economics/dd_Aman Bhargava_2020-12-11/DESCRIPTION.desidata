@@ -1,0 +1,16 @@
+--- 
+id: dd_Aman Bhargava_2020-12-11
+name: Aman Bhargava
+description: This is a datasrt about Aman BHargava's music streaming history
+date: 2020-12-11
+source_name: Spotify
+source: spotify.com
+license: CC-BY
+columns:
+- col_name: id
+  col_type: numeric
+  col_description: id of the song
+- col_name: song_name
+  col_type: character
+  col_description: Name of the song
+--- 

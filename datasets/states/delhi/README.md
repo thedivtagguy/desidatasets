@@ -1,6 +1,5 @@
 
 # Delhi datasets
-## Description
 This category contains datasets related to Delhi.
 ## Usage
 Install the `desidata` package using CRAN:

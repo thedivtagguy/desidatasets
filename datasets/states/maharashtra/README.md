@@ -1,6 +1,5 @@
 
 # Maharashtra datasets
-## Description
 This category contains datasets related to Maharashtra.
 ## Usage
 Install the `desidata` package using CRAN:

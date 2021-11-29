@@ -1,6 +1,5 @@
 
 # Agriculture datasets
-## Description
 This category contains datasets related to Agriculture.
 ## Usage
 Install the `desidata` package using CRAN:

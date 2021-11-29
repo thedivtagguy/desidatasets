@@ -1,6 +1,5 @@
 
 # Sports datasets
-## Description
 This category contains datasets related to Sports.
 ## Usage
 Install the `desidata` package using CRAN:

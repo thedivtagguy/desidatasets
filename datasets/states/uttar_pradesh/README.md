@@ -1,6 +1,5 @@
 
 # Uttar_pradesh datasets
-## Description
 This category contains datasets related to Uttar_pradesh.
 ## Usage
 Install the `desidata` package using CRAN:

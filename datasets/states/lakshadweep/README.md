@@ -1,6 +1,5 @@
 
 # Lakshadweep datasets
-## Description
 This category contains datasets related to Lakshadweep.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Mizoram datasets
-## Description
 This category contains datasets related to Mizoram.
 ## Usage
 Install the `desidata` package using CRAN:

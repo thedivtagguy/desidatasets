@@ -1,6 +1,5 @@
 
 # Andhra_pradesh datasets
-## Description
 This category contains datasets related to Andhra_pradesh.
 ## Usage
 Install the `desidata` package using CRAN:

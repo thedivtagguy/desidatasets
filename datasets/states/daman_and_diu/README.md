@@ -1,6 +1,5 @@
 
 # Daman_and_diu datasets
-## Description
 This category contains datasets related to Daman_and_diu.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Tamil_nadu datasets
-## Description
 This category contains datasets related to Tamil_nadu.
 ## Usage
 Install the `desidata` package using CRAN:

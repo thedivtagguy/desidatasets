@@ -1,6 +1,5 @@
 
 # Dadra_and_nagar_haveli datasets
-## Description
 This category contains datasets related to Dadra_and_nagar_haveli.
 ## Usage
 Install the `desidata` package using CRAN:

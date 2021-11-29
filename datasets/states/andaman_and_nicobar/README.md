@@ -1,6 +1,5 @@
 
 # Andaman_and_nicobar datasets
-## Description
 This category contains datasets related to Andaman_and_nicobar.
 ## Usage
 Install the `desidata` package using CRAN:

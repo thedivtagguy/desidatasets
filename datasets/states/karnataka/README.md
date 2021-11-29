@@ -1,6 +1,5 @@
 
 # Karnataka datasets
-## Description
 This category contains datasets related to Karnataka.
 ## Usage
 Install the `desidata` package using CRAN:

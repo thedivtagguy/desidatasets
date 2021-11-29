@@ -1,6 +1,5 @@
 
 # Geography datasets
-## Description
 This category contains datasets related to Geography.
 ## Usage
 Install the `desidata` package using CRAN:

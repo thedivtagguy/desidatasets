@@ -1,6 +1,5 @@
 
 # Economics datasets
-## Description
 This category contains datasets related to Economics.
 ## Usage
 Install the `desidata` package using CRAN:

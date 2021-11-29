@@ -1,6 +1,5 @@
 
 # Sikkim datasets
-## Description
 This category contains datasets related to Sikkim.
 ## Usage
 Install the `desidata` package using CRAN:

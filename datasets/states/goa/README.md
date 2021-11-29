@@ -1,6 +1,5 @@
 
 # Goa datasets
-## Description
 This category contains datasets related to Goa.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Assam datasets
-## Description
 This category contains datasets related to Assam.
 ## Usage
 Install the `desidata` package using CRAN:

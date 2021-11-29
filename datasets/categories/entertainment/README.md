@@ -1,6 +1,5 @@
 
 # Entertainment datasets
-## Description
 This category contains datasets related to Entertainment.
 ## Usage
 Install the `desidata` package using CRAN:

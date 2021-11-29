@@ -1,6 +1,5 @@
 
 # Punjab datasets
-## Description
 This category contains datasets related to Punjab.
 ## Usage
 Install the `desidata` package using CRAN:

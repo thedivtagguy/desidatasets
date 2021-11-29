@@ -1,6 +1,5 @@
 
 # Orissa datasets
-## Description
 This category contains datasets related to Orissa.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,24 +1,29 @@
 import os
 
+# Set working directory to /datasets
+os.chdir('/datasets')
+
 readme_template = """
 # {name} datasets
 
-## Description
 This category contains datasets related to {name}.
 
 ## Usage
 
 Install the `desidata` package using CRAN:
+
 ```r
 install.packages("desidata")
 ```
 Access datasets in this category by using the following command:
+
 ```r
 library(desidata)
-get_datasets(within = {main_category}, about = {name})
+
+get_datasets(within = {main_category}, about = {name_l})
 ```
 
-`desidata 📦 for R`
+`desidata for R`
 """
 
 # Delete the readme file if it exists
@@ -46,4 +51,5 @@ for folder in os.listdir(os.getcwd()):
                     with open(os.path.join(folder, subfolder, 'README.md'), 'r') as f:
                         read_template = f.read()
                     with open(os.path.join(folder, subfolder, 'README.md'), 'w') as f:
-                        f.write(readme_template.format(name = subfolder, main_category = folder))
+                        # Capitalize the first letter of the folder name
+                        f.write(readme_template.format(name = subfolder[0].upper() + subfolder[1:], name_l = subfolder, main_category = folder))

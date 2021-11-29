@@ -1,6 +1,5 @@
 
 # Nagaland datasets
-## Description
 This category contains datasets related to Nagaland.
 ## Usage
 Install the `desidata` package using CRAN:

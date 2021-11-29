@@ -1,6 +1,5 @@
 
 # Uttarakhand datasets
-## Description
 This category contains datasets related to Uttarakhand.
 ## Usage
 Install the `desidata` package using CRAN:

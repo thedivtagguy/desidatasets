@@ -1,6 +1,5 @@
 
 # Puducherry datasets
-## Description
 This category contains datasets related to Puducherry.
 ## Usage
 Install the `desidata` package using CRAN:

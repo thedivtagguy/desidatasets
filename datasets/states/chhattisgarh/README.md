@@ -1,6 +1,5 @@
 
 # Chhattisgarh datasets
-## Description
 This category contains datasets related to Chhattisgarh.
 ## Usage
 Install the `desidata` package using CRAN:

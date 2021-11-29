@@ -1,6 +1,5 @@
 
 # Politics datasets
-## Description
 This category contains datasets related to Politics.
 ## Usage
 Install the `desidata` package using CRAN:

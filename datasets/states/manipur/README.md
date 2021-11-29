@@ -1,6 +1,5 @@
 
 # Manipur datasets
-## Description
 This category contains datasets related to Manipur.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # West_bengal datasets
-## Description
 This category contains datasets related to West_bengal.
 ## Usage
 Install the `desidata` package using CRAN:

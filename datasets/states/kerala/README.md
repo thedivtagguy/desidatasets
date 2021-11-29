@@ -1,6 +1,5 @@
 
 # Kerala datasets
-## Description
 This category contains datasets related to Kerala.
 ## Usage
 Install the `desidata` package using CRAN:

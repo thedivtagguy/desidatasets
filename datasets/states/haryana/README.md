@@ -1,6 +1,5 @@
 
 # Haryana datasets
-## Description
 This category contains datasets related to Haryana.
 ## Usage
 Install the `desidata` package using CRAN:

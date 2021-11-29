@@ -1,6 +1,5 @@
 
 # Rajasthan datasets
-## Description
 This category contains datasets related to Rajasthan.
 ## Usage
 Install the `desidata` package using CRAN:

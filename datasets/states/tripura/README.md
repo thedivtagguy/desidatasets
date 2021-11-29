@@ -1,6 +1,5 @@
 
 # Tripura datasets
-## Description
 This category contains datasets related to Tripura.
 ## Usage
 Install the `desidata` package using CRAN:

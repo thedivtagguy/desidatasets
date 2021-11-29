@@ -1,6 +1,5 @@
 
 # Jammu_and_kashmir datasets
-## Description
 This category contains datasets related to Jammu_and_kashmir.
 ## Usage
 Install the `desidata` package using CRAN:

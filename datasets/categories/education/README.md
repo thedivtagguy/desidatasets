@@ -1,6 +1,5 @@
 
 # Education datasets
-## Description
 This category contains datasets related to Education.
 ## Usage
 Install the `desidata` package using CRAN:

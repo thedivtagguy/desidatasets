@@ -1,6 +1,5 @@
 
 # Himachal_pradesh datasets
-## Description
 This category contains datasets related to Himachal_pradesh.
 ## Usage
 Install the `desidata` package using CRAN:

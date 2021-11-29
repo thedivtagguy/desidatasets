@@ -1,6 +1,5 @@
 
 # Arunachal_pradesh datasets
-## Description
 This category contains datasets related to Arunachal_pradesh.
 ## Usage
 Install the `desidata` package using CRAN:

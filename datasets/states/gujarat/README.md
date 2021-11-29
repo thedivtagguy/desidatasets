@@ -1,6 +1,5 @@
 
 # Gujarat datasets
-## Description
 This category contains datasets related to Gujarat.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Madhya_pradesh datasets
-## Description
 This category contains datasets related to Madhya_pradesh.
 ## Usage
 Install the `desidata` package using CRAN:

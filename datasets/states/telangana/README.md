@@ -1,6 +1,5 @@
 
 # Telangana datasets
-## Description
 This category contains datasets related to Telangana.
 ## Usage
 Install the `desidata` package using CRAN:

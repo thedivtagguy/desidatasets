@@ -1,6 +1,5 @@
 
 # Jharkhand datasets
-## Description
 This category contains datasets related to Jharkhand.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Health datasets
-## Description
 This category contains datasets related to Health.
 ## Usage
 Install the `desidata` package using CRAN:

@@ -1,6 +1,5 @@
 
 # Meghalaya datasets
-## Description
 This category contains datasets related to Meghalaya.
 ## Usage
 Install the `desidata` package using CRAN:

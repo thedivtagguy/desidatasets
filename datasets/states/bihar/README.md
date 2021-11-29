@@ -1,6 +1,5 @@
 
 # Bihar datasets
-## Description
 This category contains datasets related to Bihar.
 ## Usage
 Install the `desidata` package using CRAN:
