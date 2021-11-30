@@ -74,14 +74,38 @@ def create_dataset(current_path):
         else:
             break
 
+
+    # Open file dialog to select dataset file
+    dataset_file = filedialog.askopenfilename(
+        initialdir=os.path.join(current_path, 'datasets'),
+        title="Select dataset file",
+        filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
+    
+
+    # Read all column names from dataset file
+    cols = pd.read_csv(dataset_file, nrows=1, encoding= 'latin-1').columns
+    col_types = [
+        "string",
+        "numeric",
+        "date",
+        "datetime",
+        "boolean",
+        "character",
+    ]
     dataset_columns = []
-    while True:
-        column_name = input("Column name: ")
-        column_type = input("Column type: ")
-        column_description = input("Column description: ")
-        dataset_columns.append([column_name, column_type, column_description])
-        if input("Add another column? (y/n) ") == "n":
-            break
+    for column in cols: 
+        print("\n")
+        print("-------------------------------------------------------")
+        column_name = column
+        print("======")
+        column_description = input(f"Description for {column_name}: ")
+        # Allow user to choose column type
+        print("======")
+        for i, col_type in enumerate(col_types):
+            print(f"{i}: {col_type}")
+        column_type = col_types[int(input(f"{column_name} type: "))]
+        dataset_columns.append([column_name, column_description, column_type])
+        print("-------------------------------------------------------")
 
     # Create ID for dataset
     dataset_id = "dd" + "_" + dataset_name + "_" + dataset_date
@@ -147,6 +171,11 @@ def create_dataset(current_path):
                                        category=dataset_category.title(),
                                        subcategory=dataset_about.title()
                                        ))
+        
+        # Copy dataset file to this folder
+        shutil.copy(dataset_file, ".")
+        # Rename dataset file to the dataset id
+        os.rename(os.path.basename(dataset_file), dataset_id + ".csv")
 
         # Switch back to current_path
         os.chdir(current_path)
@@ -155,6 +184,11 @@ if __name__ == "__main__":
     import os
     from slugify import slugify
     import inspect
+    import pandas as pd
+    import tkinter as tk
+    from tkinter import filedialog
+    import shutil
+
     current_path = os.getcwd()
 
     # Switch to /datasets
@@ -189,6 +223,7 @@ if __name__ == "__main__":
     README_TEMPLATE = inspect.cleandoc("""
     # {dataset_name}
     `{category} > {subcategory}`
+
 
     {data_description}
 
