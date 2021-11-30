@@ -1,0 +1,52 @@
+{
+    "name": "Spotify Streaming Data",
+    "id": "dd-spotify-streams-2021-30-11",
+    "description": "Data of Spotify streams from Aman's account between 2019 and 2020",
+    "date": "2021-30-11",
+    "source_name": "Spotify",
+    "source": "Spotify Developer API",
+    "license": "CC BY",
+    "category": "categories",
+    "about": "entertainment",
+    "citation": "Spotify (2021-30-11). 'Spotify Streaming Data', https://github.com/thedivtagguy/desidatasets/tree/master/datasets/categories/entertainment/dd-spotify-streams-2021-30-11. Retrieved from Spotify Developer API \n",
+    "download_command": "download_data(name = 'dd-spotify-streams-2021-30-11')",
+    "icon": "https://avatars.dicebear.com/api/jdenticon/dd-spotify-streams-2021-30-11.svg",
+    "dictionary": {
+        "column_names": [
+            "Unnamed: 0",
+            "id",
+            "artistName",
+            "trackName",
+            "time",
+            "date",
+            "duration",
+            "msPlayed",
+            "percent_song",
+            "endTime"
+        ],
+        "column_types": [
+            "numeric",
+            "string",
+            "string",
+            "string",
+            "datetime",
+            "date",
+            "numeric",
+            "numeric",
+            "numeric",
+            "datetime"
+        ],
+        "column_descriptions": [
+            "id column (empty)",
+            "Song's ID on Spotify",
+            "Name of the artist",
+            "Name of the song",
+            "Time played at",
+            "Date played at",
+            "Length of song",
+            "Duration of time played in milliseconds",
+            "Percentage of song played. might be more than 100 if song is replayed before finishing",
+            "Time finished playing"
+        ]
+    }
+}

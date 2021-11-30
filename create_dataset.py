@@ -1,13 +1,28 @@
+import os
+from slugify import slugify
+import inspect
+import pandas as pd
+import tkinter as tk
+from tkinter import filedialog
+import shutil
+import json
+
 def create_dataset(current_path):
     """
     This function creates a new dataset in the datasets folder.
     """
-
-
     while True:
         dataset_name = input("Name: ")
         if dataset_name == "":
             print("Please enter a valid dataset name")
+        else:
+            break
+
+    
+    while True:
+        dataset_id_name = input("ID: ")
+        if dataset_id_name == "":
+            print("Please enter a valid dataset ID")
         else:
             break
 
@@ -108,8 +123,16 @@ def create_dataset(current_path):
         print("-------------------------------------------------------")
 
     # Create ID for dataset
-    dataset_id = "dd" + "_" + dataset_name + "_" + dataset_date
+    # If name is longer than 2 words, use first 2 words
+    # If name is shorter than 2 words, use first word
+    # If name is 2 words, use both words
+   
+    dataset_id = "dd" + "_" + dataset_id_name + "_" + dataset_date
     dataset_id = slugify(dataset_id)
+
+    icon = "https://avatars.dicebear.com/api/jdenticon/{dataset_id}.svg".format(dataset_id=dataset_id)
+
+    download_command = "download_data(name = '{dataset_id}')".format(dataset_id=dataset_id)
 
     # Create citation for dataset
     dataset_citation = "{dataset_source_name} ({dataset_date}). '{dataset_name}', {dataset_url}. Retrieved from {dataset_source} \n".format(
@@ -139,22 +162,34 @@ def create_dataset(current_path):
     os.mkdir(dataset_id)
     os.chdir(dataset_id)
 
-    # Create a YAML file with the dataset information
-    with open("DESCRIPTION.yaml", "w") as f:
-        f.write("--- \n")
-        f.write("id: " + dataset_id + "\n")
-        f.write("name: " + dataset_name + "\n")
-        f.write("description: " + dataset_description + "\n")
-        f.write("date: " + dataset_date + "\n")
-        f.write("source_name: " + dataset_source_name + "\n")
-        f.write("source: " + dataset_source + "\n")
-        f.write("license: " + dataset_license + "\n")
-        f.write("columns:\n")
-        for column in dataset_columns:
-            f.write("- col_name: " + column[0] + "\n")
-            f.write("  col_type: " + column[1] + "\n")
-            f.write("  col_description: " + column[2] + "\n")
-        f.write("--- \n")
+
+
+    # Create JSON file with the dataset metadata
+    with open("DESCRIPTION.json", "w") as f:
+        json.dump(
+            {
+                "name": dataset_name,
+                "id": dataset_id,
+                "description": dataset_description,
+                "date": dataset_date,
+                "source_name": dataset_source_name,
+                "source": dataset_source,
+                "license": dataset_license,
+                "category": dataset_category,
+                "about": dataset_about,
+                "citation": dataset_citation,
+                "download_command": download_command,
+                "icon": icon,
+                 # Include dictionary of column names and types and descriptions
+                 "dictionary": {
+                    "column_names": [column[0] for column in dataset_columns],
+                    "column_types": [column[2] for column in dataset_columns],
+                    "column_descriptions": [column[1] for column in dataset_columns]
+                }
+            },
+            f,
+            indent=4
+        )
 
     # Create a README file with the dataset information
     with open("README.md", "w") as f:
@@ -181,14 +216,6 @@ def create_dataset(current_path):
         os.chdir(current_path)
 
 if __name__ == "__main__":
-    import os
-    from slugify import slugify
-    import inspect
-    import pandas as pd
-    import tkinter as tk
-    from tkinter import filedialog
-    import shutil
-
     current_path = os.getcwd()
 
     # Switch to /datasets
