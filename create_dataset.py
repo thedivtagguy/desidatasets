@@ -123,10 +123,6 @@ def create_dataset(current_path):
         print("-------------------------------------------------------")
 
     # Create ID for dataset
-    # If name is longer than 2 words, use first 2 words
-    # If name is shorter than 2 words, use first word
-    # If name is 2 words, use both words
-   
     dataset_id = "dd" + "_" + dataset_id_name + "_" + dataset_date
     dataset_id = slugify(dataset_id)
 
@@ -163,33 +159,49 @@ def create_dataset(current_path):
     os.chdir(dataset_id)
 
 
+    # Create 2 JSON files for the dataset
+    # One with the dataset metadata
+    # Another with the data dictionary
 
-    # Create JSON file with the dataset metadata
-    with open("DESCRIPTION.json", "w") as f:
-        json.dump(
-            {
-                "name": dataset_name,
-                "id": dataset_id,
-                "description": dataset_description,
-                "date": dataset_date,
-                "source_name": dataset_source_name,
-                "source": dataset_source,
-                "license": dataset_license,
-                "category": dataset_category,
-                "about": dataset_about,
-                "citation": dataset_citation,
-                "download_command": download_command,
-                "icon": icon,
-                 # Include dictionary of column names and types and descriptions
-                 "dictionary": {
-                    "column_names": [column[0] for column in dataset_columns],
-                    "column_types": [column[2] for column in dataset_columns],
-                    "column_descriptions": [column[1] for column in dataset_columns]
-                }
-            },
-            f,
-            indent=4
-        )
+    # Create dataset metadata
+    dataset_metadata = {
+        "id": dataset_id,
+        "name": dataset_name,
+        "description": dataset_description,
+        "date": dataset_date,
+        "source": dataset_source,
+        "license": dataset_license,
+        "category": dataset_category,
+        "about": dataset_about,
+        "columns": dataset_columns,
+        "citation": dataset_citation,
+        "download_command": download_command,
+        "icon": icon
+    }
+
+    # Create data dictionary
+    data_dictionary = {
+        "id": dataset_id,
+        "name": dataset_name,
+        "description": dataset_description,
+        "date": dataset_date,
+        "source": dataset_source,
+        "license": dataset_license,
+        "category": dataset_category,
+        "about": dataset_about,
+        "columns": dataset_columns,
+        "citation": dataset_citation,
+        "download_command": download_command,
+        "icon": icon
+    }
+
+    # Write JSON file
+    with open('DESCRIPTION.json', 'w') as outfile:
+        json.dump(dataset_metadata, outfile)
+
+    # Write data dictionary JSON file
+    with open('DICTIONARY.json', 'w') as outfile:
+        json.dump(data_dictionary, outfile)
 
     # Create a README file with the dataset information
     with open("README.md", "w") as f:
