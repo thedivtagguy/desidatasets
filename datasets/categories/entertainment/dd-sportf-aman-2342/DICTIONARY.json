@@ -1,0 +1,1 @@
+{"Unnamed: 0": {"type": "string", "description": "ID columns"}, "Signs": {"type": "string", "description": "name of zodiac"}, "Horoscope": {"type": "string", "description": "Text corohosorpse"}}

@@ -173,27 +173,19 @@ def create_dataset(current_path):
         "license": dataset_license,
         "category": dataset_category,
         "about": dataset_about,
-        "columns": dataset_columns,
         "citation": dataset_citation,
         "download_command": download_command,
         "icon": icon
     }
 
-    # Create data dictionary
-    data_dictionary = {
-        "id": dataset_id,
-        "name": dataset_name,
-        "description": dataset_description,
-        "date": dataset_date,
-        "source": dataset_source,
-        "license": dataset_license,
-        "category": dataset_category,
-        "about": dataset_about,
-        "columns": dataset_columns,
-        "citation": dataset_citation,
-        "download_command": download_command,
-        "icon": icon
-    }
+    # From dataset_columns, create a dictionary with name, type and description as keys and values
+    data_dictionary = {}
+    for column in dataset_columns:
+        data_dictionary[column[0]] = {
+            "type": column[2],
+            "description": column[1]
+        }
+
 
     # Write JSON file
     with open('DESCRIPTION.json', 'w') as outfile:
