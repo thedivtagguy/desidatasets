@@ -1,0 +1,1 @@
+{"Unnamed: 0": {"type": "numeric", "description": "ID for the entry"}, "Signs": {"type": "string", "description": "The associated sign"}, "Horoscope": {"type": "string", "description": "Text of the horoscope"}}
